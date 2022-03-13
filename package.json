@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/awhite2490/todolist_backend#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.6"
   }
 }
