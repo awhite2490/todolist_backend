@@ -20,26 +20,7 @@ mongoose.connect(dbConfig.url, {}).then(() => {
     process.exit();
 });
 
-app.get('/items', (req, res) => {
-    const items = [
-        {
-            itemid: 1,
-            isComplete: false,
-            text: 'First sample item - not completed',
-        },
-        {
-            itemid: 2,
-            isComplete: true,
-            text: 'Second sample item - is completed',
-        },
-        {
-            itemid:4,
-            isComplete: false,
-            text: 'Third sample item - ID is 4'
-        },
-    ];
-    res.json(items);
-});
+
 
 require ('./app/routes/item.routes.js')(app);
 
