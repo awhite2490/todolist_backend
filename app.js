@@ -4,9 +4,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3001;
 
+const cors = require('cors');
+
 app.use(bodyParser.urlencoded({ extended: true}));
 
 app.use(bodyParser.json());
+app.use(cors());
 
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
