@@ -9,7 +9,9 @@ const cors = require('cors');
 app.use(bodyParser.urlencoded({ extended: true}));
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5500'
+}));
 
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
@@ -22,8 +24,6 @@ mongoose.connect(dbConfig.url, {}).then(() => {
     console.log('Could not connect to DB', err);
     process.exit();
 });
-
-
 
 require ('./app/routes/item.routes.js')(app);
 

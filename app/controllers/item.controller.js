@@ -9,7 +9,8 @@ exports.create = (req, res) => {
 
     const item = new Item({
         text: req.body.text,
-        isComplete: req.body.isComplete || false
+        isComplete: req.body.isComplete || false,
+        dueDate: req.body.dueDate
     });
 
     item.save()
@@ -60,10 +61,11 @@ exports.update = (req, res) => {
             message: "Item text can not be empty"
         });
     }
-
+    
     Item.findByIdAndUpdate(req.params.itemId, {
         text: req.body.text,
-        isComplete: req.body.isComplete || false
+        isComplete: req.body.isComplete || false,
+        dueDate: req.body.dueDate
     }, {new: true})
     .then(item => {
         if(!item) {

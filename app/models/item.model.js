@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const ItemSchema = mongoose.Schema({
-    itemID: Number,
     isComplete: Boolean,
-    text: String
+    text: String,
+    dueDate: Date
 }, {
     timestamps: true
 });
